@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Chivo+Mono&family=Montserrat&family=Patrick+Hand&family=Roboto&family=Sono&family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Barlow+Condensed&family=Chivo+Mono&family=Inconsolata&family=Jost:wght@400;700&family=Montserrat&family=Mulish:wght@200;400&family=Patrick+Hand&family=Roboto:ital,wght@0,400;0,700;1,400&family=Sono&family=Space+Mono&display=swap");
 
 :root {
-  --primary: #c8d9e1;
-  --secondary: #aec2bc;
-  --dark: #212121;
-  --light: #f1efe2;
+  --green: #50ffaf;
+  --yellow: #f8ff1c;
+  --purple: #9723c9;
+  --black: #000000;
+  --pink: #ff00f6;
 }
 
 * {
@@ -12,7 +13,8 @@
   /*     outline: 3px solid limegreen !important;  */
 }
 body {
-  font-family: montserrat, sans-serif;
+  font-family: "Jost", Kokoro, sans-serif;
+  background-color: var(--green);
   width: 80%;
   min-width: 100vh;
   text-align: center;
@@ -23,19 +25,12 @@ h1 {
   margin: 4rem;
 }
 .container {
-  /*     margin: 5rem auto;
-    width: min(90%,75rem);
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    gap: 1.6rem; */
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: 60% 60% 60% 60%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  justify-content: space-evenly;
 }
+
 .card {
-  /* margin: 100px auto 0; */
   width: 250px;
   height: 320px;
   perspective: 1000px;
@@ -61,14 +56,15 @@ h1 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  border: 5px solid var(-black);
+  box-shadow: 10px 10px;
 }
 .card__face--front {
   background-image: linear-gradient(
     to bottom right,
-    var(--primary),
-    var(--secondary)
+    var(--pink),
+    var(--purple)
   );
   display: flex;
   align-items: center;
@@ -76,12 +72,12 @@ h1 {
 }
 
 .card__face--front h2 {
-  color: #fff;
+  color: var(--black);
   font-size: 2em;
 }
 
 .card__face--back {
-  border-color: var(--light);
+  border-color: var(--yellow);
   transform: rotateY(180deg);
 }
 
@@ -107,8 +103,8 @@ h1 {
   /* border-radius: 0 0 100px 0; This will give the curve in the one corner */
   background-image: linear-gradient(
     to bottom left,
-    var(--primary) 10%,
-    var(--secondary) 115%
+    var(--pink) 10%,
+    var(--purple) 115%
   );
 }
 
@@ -122,11 +118,12 @@ h1 {
 }
 
 .card__body {
+  background-color: #f8ff1c;
   padding: 1rem;
 }
 
 .card__body p {
-  color: var(--dark);
+  color: var(--black);
   text-align: center;
   /*     margin: 0; */
   font-size: 1em;
